@@ -7,10 +7,9 @@
 ! (2) the name of the decision is followed by the character string defining the decision
 ! (3) the simulation start/end times must be within single quotes
 ! ***********************************************************************************************************************
-simulStart    '2016-01-01 01:00'   ! simulation start time
-simulFinsh    '2016-12-31 01:00'   ! simulation end time
-!simulStart    '1999-01-01 00:30'   ! simulation start time
-!simulFinsh    '2006-01-01 00:00'   ! simulation end time
+simulStart    '2002-10-01 00:00'   ! simulation start time
+simulFinsh    '2003-05-31 00:00'   ! simulation end time
+tmZoneInfo    localTime            ! time zone information
 soilCatTbl    ROSETTA              ! soil-category dataset
 vegeParTbl    MODIFIED_IGBP_MODIS_NOAH ! vegetation-category dataset
 soilStress    NoahType             ! choice of function for the soil moisture control on stomatal resistance
@@ -26,9 +25,10 @@ bcLowrTdyn    zeroFlux             ! type of lower boundary condition for thermo
 bcUpprSoiH    liq_flux             ! type of upper boundary condition for soil hydrology
 bcLowrSoiH    zeroFlux             ! type of lower boundary condition for soil hydrology
 veg_traits    CM_QJRMS1988         ! choice of parameterization for vegetation roughness length and displacement height
-rootProfil    powerLaw
+rootProfil    powerLaw             ! choice of parameterization for the rooting profile
 canopyEmis    difTrans             ! choice of parameterization for canopy emissivity
-snowIncept    lightSnow            ! choice of parameterization for snow interception
+snowIncept    stickySnow           ! choice of parameterization for snow interception
+snowUnload    windUnload           ! choice of parameterization for snow unloading from canopy
 windPrfile    logBelowCanopy       ! choice of canopy wind profile
 astability    louisinv             ! choice of stability function
 canopySrad    BeersLaw             ! choice of method for canopy shortwave radiation
